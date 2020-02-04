@@ -20,11 +20,12 @@
       background-color:white;
       width: 260px;
       display: flex;
-      justify-content: space-between;
       &__text{
       color: black;
+      line-height: 20px;
       }
       &__icon{
+      width: 60px;
       }
     }
   }
