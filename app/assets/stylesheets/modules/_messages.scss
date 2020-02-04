@@ -5,9 +5,22 @@
 .side-bar{
   width: 300px;
   float: left;
-  &__user-name{
+  &__user{
     background-color: #253141;
     height: 100px;
+    position: relative;
+    &__name{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      height: 20px;
+      background-color:white;
+      width: 260px;
+      margin-left: 20px;
+    }
   }
   &__group-list{
     background-color: #2f3e51;
