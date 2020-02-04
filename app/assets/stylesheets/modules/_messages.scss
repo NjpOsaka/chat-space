@@ -19,7 +19,13 @@
       height: 20px;
       background-color:white;
       width: 260px;
-      margin-left: 20px;
+      display: flex;
+      justify-content: space-between;
+      &__text{
+      color: black;
+      }
+      &__icon{
+      }
     }
   }
   &__group-list{
