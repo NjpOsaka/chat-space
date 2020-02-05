@@ -1,10 +1,12 @@
 *{
   box-sizing: border-box;
 }
+.wrapper{
+  display: flex;
+}
 
 .side-bar{
   width: 300px;
-  float: left;
   &__user{
     background-color: #253141;
     height: 100px;
@@ -17,27 +19,41 @@
       left: 0;
       margin: auto;
       height: 20px;
-      background-color:white;
       width: 260px;
       display: flex;
       &__text{
-      color: black;
+      color:#ffffff;
       line-height: 20px;
+      font-size: 16px;
+      width: 200px;
       }
       &__icon{
-      width: 60px;
+      color: #ffffff;
+      list-style: none;
+      margin-left: 5px;
       }
     }
   }
   &__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+    &__box{
+      color: #ffffff;
+      height: 91px;
+      padding: 20px;
+      &__groupname{
+        font-size: 15px;
+      }
+      &__messege{
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
   }
 }
 
 .chat-main{
   width: calc(100vw - 300px);
-  float: right;
   &__group-info{
     background-color:#ffffff ;
     height: 100px;
