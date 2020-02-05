@@ -62,7 +62,7 @@
     justify-content: space-between;
     &__groupname{
       font-size: 20px;
-      color: 333333;
+      color: #333333;
       margin-top: 35px;
       margin-left: 40px;
       margin-bottom: 15px;
@@ -113,13 +113,34 @@
   &__message-form{
     background-color: #d2d2d2;
     height: 90px;
+    display: flex;
+    align-items: center;
     &__textbox{
+      background-color: #ffffff;
+      height: 50px;
+      line-height: 50px;
+      display: flex;
+      width: calc(100% - 200px);
+      margin-left: 40px;
+      position: relative;
       &__left{
+        position: absolute;
       }
       &__right{
+        position: absolute;
       }
     }
     &__sendbtn{
+      background-color: #38aef0;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 30px;
+      position: absolute;
+      right: 40px;
+      width: 100px;
     }
   }
 }

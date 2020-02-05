@@ -16,5 +16,10 @@
  .chat-main__message-form
   .chat-main__message-form__textbox
    .chat-main__message-form__textbox__left
+   testtext
    .chat-main__message-form__textbox__right
-  .chat-main__message-form__sendbtn
+   %label{class: "input-box__image"}
+   = icon('fas', 'image')
+   %input{type: "file"}
+  =link_to "#", class: "chat-main__message-form__sendbtn" do
+   send
