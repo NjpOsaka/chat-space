@@ -14,12 +14,10 @@
   .chat-main__message-list__comment
    TestTest
  .chat-main__message-form
-  .chat-main__message-form__textbox
-   .chat-main__message-form__textbox__left
-   testtext
-   .chat-main__message-form__textbox__right
-   %label{class: "input-box__image"}
-   = icon('fas', 'image')
-   %input{type: "file"}
-  =link_to "#", class: "chat-main__message-form__sendbtn" do
-   send
+  %chat-main__message-form.new_message
+   .input-box
+    %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+    %lable{class: "input-box__image"}
+     = icon('fas', 'image')
+     %input{type: "file",class: "input-box__image__file",id: "message_image"}
+   %input{type: "submit",name:"commit" ,class: "submit-btn",value:"Send"}
