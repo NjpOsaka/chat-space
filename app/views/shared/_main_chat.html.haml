@@ -1,0 +1,23 @@
+.chat-main
+ .chat-main__group-info
+  .chat-main__group-info__groupname
+   test
+   .chat-main__group-info__groupname__membername
+    test
+  =link_to "#", class: "chat-main__group-info__editbtn" do
+   edit
+ .chat-main__message-list
+  .chat-main__message-list__name
+   test
+   .chat-main__message-list__name__date
+    2020-2-5
+  .chat-main__message-list__comment
+   TestTest
+ .chat-main__message-form
+  %form.new_message
+   .input-box
+    %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+    %label{class: "input-box__image"}
+     =icon('fas', 'image')
+     %input{type: "file",class: "input-box__image__file"}
+   %input{type: "submit",class: "submit-btn",value:"Send"}
