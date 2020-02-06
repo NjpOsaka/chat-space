@@ -114,8 +114,7 @@
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
-    
-    chat-main__message-form{
+    form{
      display: flex;
      .input-box{
       width: 100%;
@@ -135,7 +134,7 @@
        right: 10px;
 
        &__file{
-        display: none;
+       display: none;
        }
       }
      }

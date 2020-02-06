@@ -14,10 +14,10 @@
   .chat-main__message-list__comment
    TestTest
  .chat-main__message-form
-  %chat-main__message-form.new_message
+  %form.new_message
    .input-box
     %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-    %lable{class: "input-box__image"}
-     = icon('fas', 'image')
-     %input{type: "file",class: "input-box__image__file",id: "message_image"}
-   %input{type: "submit",name:"commit" ,class: "submit-btn",value:"Send"}
+    %label{class: "input-box__image"}
+     =icon('fas', 'image')
+     %input{type: "file",class: "input-box__image__file"}
+   %input{type: "submit",class: "submit-btn",value:"Send"}
