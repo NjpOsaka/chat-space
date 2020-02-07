@@ -21,15 +21,16 @@
       height: 20px;
       width: 260px;
       display: flex;
+      color: white;
+      .fas{
+      color: white;
+      }
       &__text{
-      color:#ffffff;
       line-height: 20px;
       font-size: 16px;
       width: 200px;
       }
       &__icon{
-      color: #ffffff;
-      text-decoration: none;
       margin-left: 5px;
       }
     }
@@ -38,15 +39,16 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     &__box{
-      color: #ffffff;
       height: 91px;
       padding: 20px;
       &__groupname{
         font-size: 15px;
+        color: #ffffff;
       }
       &__messege{
         font-size: 11px;
         margin-top: 5px;
+        color: #ffffff;
       }
     }
   }
