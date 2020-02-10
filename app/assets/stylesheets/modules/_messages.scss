@@ -53,28 +53,40 @@
     }
   }
 }
+
+
+
+
+
 .chat-main{
   width: calc(100vw - 300px);
-  &__group-info{
+  .headder{
     background-color:#ffffff ;
     height: 100px;
     border-bottom: 1px solid #eeeeee;
     display: flex;
     justify-content: space-between;
-    &__groupname{
+    padding: 0 40px;
+    .group-info{
+      margin-top: 35px;
+    
+     .groupname{
       font-size: 20px;
       color: #333333;
-      margin-top: 35px;
-      margin-left: 40px;
-      margin-bottom: 15px;
-      &__membername{
+      .membername{
         color: #999999;
         font-size: 12px;
-        margin-top: 15px;
-        height: 12px;
+        display: flex;
+        list-style: none;
+        .name{
+          margin-left: 0.3rem;
+        }
       }
+     } 
     }
-    &__editbtn{
+     
+  }
+    .editbtn{
       color: #38aef0;
       font-size: 16px;
       text-decoration: none;
@@ -86,10 +98,21 @@
       position: absolute;
       right: 40px;
     }
-  }
-  
 
   
+  
+
+
+
+
+
+
+
+
+
+
+
+
   &__message-list{
     background-color: #fafafa;
     height: calc(100vh - 190px);
@@ -108,16 +131,14 @@
         margin-left: 10px;
      }
     }
-
     .message-lists__comment{
       font-size: 14px;
       color: #434A54;
       line-height: 14px;
       margin-bottom: 10px;
+    }
    }
   }
-  
- }
   
   
   
@@ -165,5 +186,6 @@
        cursor: pointer;
      }
     } 
-  }
+  } 
+
 }
