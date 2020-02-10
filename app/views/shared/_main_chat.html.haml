@@ -1,23 +1,25 @@
 .chat-main
- .chat-main__group-info
-  .chat-main__group-info__groupname
-   test
-   .chat-main__group-info__groupname__membername
-    test
-  =link_to "#", class: "chat-main__group-info__editbtn" do
-   edit
+ .headder
+  .group-info
+   .groupname
+    = @group.name
+    .membername
+     Member :
+     - @group.users.each do |user|
+      %li.name= user.name 
+    
+  =link_to "edit", class: "editbtn" do
+   Edit
+
+ 
  .chat-main__message-list
-  .chat-main__message-list__name
-   test
-   .chat-main__message-list__name__date
-    2020-2-5
-  .chat-main__message-list__comment
-   TestTest
+  = render partial: 'message', collection: @messages
+
  .chat-main__message-form
-  %form.new_message
+  = form_for [@group, @message] do |f|
    .input-box
-    %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-    %label{class: "input-box__image"}
+    = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+    = f.label :image, class: 'input-box__image' do
      =icon('fas', 'image')
-     %input{type: "file",class: "input-box__image__file"}
-   %input{type: "submit",class: "submit-btn",value:"Send"}
+     = f.file_field :image, class: 'input-box__image__file'
+   = f.submit 'Send', class: 'submit-btn'
