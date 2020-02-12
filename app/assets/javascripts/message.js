@@ -1,53 +1,59 @@
 $(function(){ 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="message-box" data-message-id=` + message.id + `>` +
-       `<div class="message-lists">` +
-        `<div class="message-lists__name">` +
-          message.user_name +
-        `</div>` +
-        `<div class="message-lists__time">` +
-          message.created_at +
-       `</div>` +
-      `</div>` +
-      `<div class="message-lists__comment">` +
-       `<p class="message-lists__comment">` +
-          message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-         `</div>` +
-        `</div>`
+      var html =
+       `<div class="message-box" data-message-id=${message.id}>
+          <div class="message-lists">
+            <div class="message-lists__name">
+              ${message.user_name}
+            </div>
+            <div class="message-lists__time">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="message-lists__comment">
+            <p class="message-lists__comment">
+              ${message.content}
+            </p>
+          </div>
+          <img src=${message.image} >
+        </div>`
    } else if (message.content) {
-     var html = `<div class="message-box" data-message-id=` + message.id + `>` +
-      `<div class="message-lists">` +
-       `<div class="message-lists__name">` +
-           message.user_name +
-          `</div>` +
-          `<div class="message-lists__time">` +
-           message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="message-lists__comment">` +
-          `<p class="message-lists__comment">` +
-           message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
-    } else if (message.image) {
-      var html = `<div class="message-box" data-message-id=` + message.id + `>` +
-        `<div class="message-lists">` +
-          `<div class="message-lists__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="message-lists__time">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="message-lists__comment">` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
-    };
+    var html =
+    `<div class="message-box" data-message-id=${message.id}>
+       <div class="message-lists">
+         <div class="message-lists__name">
+           ${message.user_name}
+         </div>
+         <div class="message-lists__time">
+           ${message.created_at}
+         </div>
+       </div>
+       <div class="message-lists__comment">
+         <p class="message-lists__comment">
+           ${message.content}
+         </p>
+       </div>
+       <img src=${message.image} >
+     </div>`
+  　} else if (message.image) {
+      var html =
+       `<div class="message-box" data-message-id=${message.id}>
+          <div class="message-lists">
+            <div class="message-lists__name">
+              ${message.user_name}
+            </div>
+            <div class="message-lists__time">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="message-lists__comment">
+            <p class="message-lists__comment">
+              ${message.content}
+            </p>
+          </div>
+          <img src=${message.image} >
+        </div>`
     return html;
    };
  
@@ -97,7 +103,6 @@ $('#new_message').on('submit', function(e){
       }
     })
     .fail(function() {
-      console.log('error');
     })
   }
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
