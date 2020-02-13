@@ -1,66 +1,61 @@
 $(function(){ 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html =
-       `<div class="message-box" data-message-id=${message.id}>
-          <div class="message-lists">
-            <div class="message-lists__name">
-              ${message.user_name}
-            </div>
-            <div class="message-lists__time">
-              ${message.created_at}
-            </div>
-          </div>
-          <div class="message-lists__comment">
-            <p class="message-lists__comment">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image} >
-        </div>`
+      var html = `<div class="message-box" data-message-id=` + message.id + `>` +
+       `<div class="message-lists">` +
+        `<div class="message-lists__name">` +
+          message.user_name +
+        `</div>` +
+        `<div class="message-lists__time">` +
+          message.created_at +
+       `</div>` +
+      `</div>` +
+      `<div class="message-lists__comment">` +
+       `<p class="message-lists__comment">` +
+          message.content +
+          `</p>` +
+          `<img src="` + message.image + `" class="lower-message__image" >` +
+         `</div>` +
+        `</div>`
    } else if (message.content) {
-    var html =
-    `<div class="message-box" data-message-id=${message.id}>
-       <div class="message-lists">
-         <div class="message-lists__name">
-           ${message.user_name}
-         </div>
-         <div class="message-lists__time">
-           ${message.created_at}
-         </div>
-       </div>
-       <div class="message-lists__comment">
-         <p class="message-lists__comment">
-           ${message.content}
-         </p>
-       </div>
-       <img src=${message.image} >
-     </div>`
-  　} else if (message.image) {
-      var html =
-       `<div class="message-box" data-message-id=${message.id}>
-          <div class="message-lists">
-            <div class="message-lists__name">
-              ${message.user_name}
-            </div>
-            <div class="message-lists__time">
-              ${message.created_at}
-            </div>
-          </div>
-          <div class="message-lists__comment">
-            <p class="message-lists__comment">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image} >
-        </div>`
+     var html = `<div class="message-box" data-message-id=` + message.id + `>` +
+      `<div class="message-lists">` +
+       `<div class="message-lists__name">` +
+           message.user_name +
+          `</div>` +
+          `<div class="message-lists__time">` +
+           message.created_at +
+          `</div>` +
+        `</div>` +
+        `<div class="message-lists__comment">` +
+          `<p class="message-lists__comment">` +
+           message.content +
+          `</p>` +
+        `</div>` +
+      `</div>`
+    } else if (message.image) {
+      var html = `<div class="message-box" data-message-id=` + message.id + `>` +
+        `<div class="message-lists">` +
+          `<div class="message-lists__name">` +
+            message.user_name +
+          `</div>` +
+          `<div class="message-lists__time">` +
+            message.created_at +
+          `</div>` +
+        `</div>` +
+        `<div class="message-lists__comment">` +
+          `<img src="` + message.image + `" class="lower-message__image" >` +
+        `</div>` +
+      `</div>`
+    };
     return html;
    };
+  
  
-$('#new_message').on('submit', function(e){
-   e.preventDefault();
-   var formData = new FormData(this);
-   var url = $(this).attr('action')
+ $('#new_message').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action')
  
   $.ajax({
     url: url,
@@ -81,7 +76,7 @@ $('#new_message').on('submit', function(e){
    .fail(function() {
      alert("メッセージ送信に失敗しました");
    })
-})
+ })
 
   var reloadMessages = function() {
    last_message_id = $('.message-box:last').data("message-id");
@@ -105,7 +100,9 @@ $('#new_message').on('submit', function(e){
     .fail(function() {
     })
   }
+  
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
   }
-})
+
+});
